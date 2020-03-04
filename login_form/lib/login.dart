@@ -23,8 +23,11 @@ class _LoginPageState extends State<LoginPage> {
         _passwordController.text == 'gg0723') {
       Navigator.pop(context);
     } else {
+      Scaffold.of(context).showSnackBar(snackBar);
     }
   }
+
+  final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
   @override
   Widget build(BuildContext context) {
@@ -78,9 +81,10 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: clearText,
                 ),
                 RaisedButton(
-                  child: Text('NEXT'),
-                  onPressed: login,                  
-                ),
+                    child: Text('NEXT'),
+                    onPressed: login,
+                    elevation: 2,
+                    ),
               ],
             )
           ],
